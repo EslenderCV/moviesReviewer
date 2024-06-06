@@ -200,12 +200,12 @@ const ReviewerLayout = ({movie}: reviewsProps) => {
                 </Box>
               </Box>
             </Box>
-            <Typography variant="h5" sx={{fontWeight: 'bold', textAlign: 'center', margin: 4}}>Reviews</Typography>
+            <Typography variant="h5" sx={{fontWeight: 'bold', textAlign: 'center', margin: 2}}>Reviews</Typography>
             <Paper sx={{
               overflowY: 'auto',
-              width: '98%',
+              width: '100%',
               borderRadius: 3,
-              margin: 3,
+              margin: 0,
               height: 'auto',
               maxHeight: '300px',
               textAlign: 'center'
