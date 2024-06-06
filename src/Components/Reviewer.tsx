@@ -72,7 +72,7 @@ interface reviewsProps {
 }
 
 const movieReview = (imdbId: string, body: string) => {
-  fetch("http://localhost:8080/api/v1/reviews", {
+  fetch("https://moviesapigcloud-dgzarlas2q-uc.a.run.app/api/v1/reviews", {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
