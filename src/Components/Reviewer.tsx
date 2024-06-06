@@ -236,6 +236,11 @@ const ReviewerLayout = ({movie}: reviewsProps) => {
                     }}>No reviews available, watch the movie and let everyone know your thoughts about it!</Typography>
               }
             </Paper>
+            <br />
+            <Divider orientation="horizontal" flexItem/>
+            <br />
+            <Typography variant="h5">@EslenderDev</Typography>
+            <br /><br /><br />
           </Box>
         </Box>
     : 
