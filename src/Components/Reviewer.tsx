@@ -272,17 +272,17 @@ const Reviewer = () => {
 
   const [movie, setMovie] = useState<movies | void | undefined>(undefined)
   useEffect(() => {
-    let moviesInfo: movies[] | null | undefined
+    let moviesInfo: movies | undefined
 
-    fetch('http://localhost:8080/api/v1/movies').then(res => res.json())
+    const urlParams = new URLSearchParams(window.location.search).get('id'); 
+
+    fetch(`http://localhost:8080/api/v1/movies/${urlParams}`).then(res => res.json())
     .then(data => {
       moviesInfo = data
-      const urlParams = new URLSearchParams(window.location.search).get('id'); 
 
-      const moviee: movies | void  = urlParams != null ? moviesInfo?.find(({ imdbId }) => imdbId === `${urlParams}`) : undefined
         clearTimeout(timeout);
         timeout = setTimeout(() => {
-          setMovie(moviee)
+          setMovie(moviesInfo)
         }, 1000)
       
     })
