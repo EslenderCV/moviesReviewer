@@ -268,7 +268,6 @@ const ReviewerLayout = ({movie}: reviewsProps) => {
 const Reviewer = () => {
 
   const [movie, setMovie] = useState<movies | void | undefined>(undefined)
-
   useEffect(() => {
     let moviesInfo: movies[] | null | undefined
 
