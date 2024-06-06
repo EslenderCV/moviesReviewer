@@ -276,7 +276,7 @@ const Reviewer = () => {
 
     const urlParams = new URLSearchParams(window.location.search).get('id'); 
 
-    fetch(`http://localhost:8080/api/v1/movies/${urlParams}`).then(res => res.json())
+    fetch(`https://moviesapigcloud-dgzarlas2q-uc.a.run.app/${urlParams}`).then(res => res.json())
     .then(data => {
       moviesInfo = data
 

@@ -15,7 +15,7 @@ import { movies } from './Components/moviesProps';
 
 let moviesInfo: movies[] | null | undefined
 
-fetch('http://localhost:8080/api/v1/movies').then(res => res.json())
+fetch('https://moviesapigcloud-dgzarlas2q-uc.a.run.app').then(res => res.json())
     .then(data => {moviesInfo = data})
     .catch(err => console.log(err))
 
