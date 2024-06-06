@@ -48,7 +48,7 @@ const SearchResults = ({ children, Search, moviesInfo, setSearch }: Props) => {
                         sm: 'auto auto',
                         xs: 'auto'
                     }, 
-                    height: '90vh',
+                    height: '75vh',
                     overflowY: 'auto'
                     }}>
                         {getMovies.map((item) => (
