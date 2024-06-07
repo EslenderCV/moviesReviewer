@@ -127,7 +127,7 @@ export default function Layout({ children, icon, to }: Props) {
         },
 
         typography: {
-          fontFamily: ['Roboto Mono', 'monospace'].join(','),
+          fontFamily: ['Kanit', 'sans-serif'].join(','),
         }
       }),
     [mode],
