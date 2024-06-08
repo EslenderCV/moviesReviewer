@@ -99,7 +99,6 @@ const MovieCarousel = ({ moviesInfo }: moviesProps) => {
                                                 color: '#000',
                                                 transition: '.2s',
                                                 '&:hover': {
-                                                    background: '#FFF',
                                                     scale: '1.06'
                                                 }
                                             }}

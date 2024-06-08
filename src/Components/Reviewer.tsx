@@ -72,29 +72,32 @@ interface reviewsProps {
 }
 
 const movieReview = (imdbId: string, body: string) => {
-  fetch("https://moviesapigcloud-dgzarlas2q-uc.a.run.app/api/v1/reviews", {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: `{
+  if(body.trim().length != 0){
+    fetch("https://moviesapigcloud-dgzarlas2q-uc.a.run.app/api/v1/reviews", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: `{
             "reviewBody": "${body}",
             "imdbId": "${imdbId}"
           }`,
-    })
-    .then(res => {
+    }).then(res => {
       res.ok 
       
       ?
         alert('Thanks for leaving your review!')
       :
-      alert('Opps! Something unexpected happened, please try again!')
+        alert('Opps! Something unexpected happened, please try again!')
 
-    })
-    .catch((err) => console.log(err));
-
-    eraseText();
+    }).catch((err) => console.log(err))
+    
+    eraseText()
+  } else {
+    alert('Sorry, you must enter some text!')
+  }
+    
 }
 
 function eraseText() {
@@ -179,6 +182,18 @@ const ReviewerLayout = ({movie}: reviewsProps) => {
               }}>
                 <img src={movie?.poster} width="100%" height="100%"/>
               </Box>
+              <a href={movie.trailerLink} key={movie.trailerLink} target="_blank">
+              <Button variant="contained" 
+                sx={{
+                  backgroundColor: 'white', 
+                  color: '#000',
+                  transition: '.2s',
+                  '&:hover': {
+                    backgroundColor: '#FFF',
+                    scale: '1.06'
+                  }
+                }}>Watch Trailer</Button>
+              </a>
               <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -236,9 +251,7 @@ const ReviewerLayout = ({movie}: reviewsProps) => {
                     }}>No reviews available, watch the movie and let everyone know your thoughts about it!</Typography>
               }
             </Paper>
-            <br />
-            <Divider orientation="horizontal" flexItem/>
-            <br />
+            <br /><br />
             <Typography variant="h5">@EslenderDev</Typography>
             <br /><br /><br />
           </Box>
